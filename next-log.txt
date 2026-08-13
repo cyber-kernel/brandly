@@ -1,0 +1,16 @@
+$ next dev
+▲ Next.js 16.1.1 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.1.2:3000
+- Experiments (use with caution):
+  · optimizePackageImports
+
+✓ Starting...
+⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+✓ Ready in 2.9s
+ GET / 200 in 2.4s (compile: 2.1s, proxy.ts: 98ms, render: 214ms)
+ GET /dashboard 200 in 2.2s (compile: 2.1s, proxy.ts: 9ms, render: 92ms)
+ GET /dashboard-2 200 in 1548ms (compile: 1506ms, proxy.ts: 4ms, render: 38ms)
+ GET /mail 200 in 1206ms (compile: 1171ms, proxy.ts: 6ms, render: 29ms)
+ GET /tasks 200 in 780ms (compile: 740ms, proxy.ts: 7ms, render: 33ms)
+ GET /tasks 200 in 307ms (compile: 4ms, proxy.ts: 5ms, render: 298ms)

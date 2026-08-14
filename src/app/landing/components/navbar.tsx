@@ -30,36 +30,22 @@ import { ModeToggle } from '@/components/mode-toggle'
 import { useTheme } from '@/hooks/use-theme'
 
 const navigationItems = [
-  { name: 'Home', href: '#hero' },
-  { name: 'Features', href: '#features' },
-  { name: 'Solutions', href: '#features', hasMegaMenu: true },
-  { name: 'Team', href: '#team' },
-  { name: 'Pricing', href: '#pricing' },
-  { name: 'FAQ', href: '#faq' },
-  { name: 'Contact', href: '#contact' },
+  { name: 'Home', href: '/landing' },
+  { name: 'Features', href: '/landing/features' },
+  { name: 'Solutions', href: '/landing/features', hasMegaMenu: true },
+  { name: 'Pricing', href: '/landing/pricing' },
+  { name: 'About', href: '/landing/about' },
+  { name: 'FAQ', href: '/landing/faq' },
+  { name: 'Contact', href: '/landing/contact' },
 ]
 
-// Solutions menu items for mobile
 const solutionsItems = [
   { title: 'Our Solutions' },
-  { name: 'Core Engine', href: '#features' },
-  { name: 'Cyber Security', href: '#features' },
-  { name: 'Data Analytics', href: '#features' },
-  { name: 'Cloud Infrastructure', href: '#features' },
+  { name: 'For Restaurants', href: '/landing/features' },
+  { name: 'For Salons', href: '/landing/features' },
+  { name: 'For Gyms', href: '/landing/features' },
+  { name: 'For Portfolios', href: '/landing/features' },
 ]
-
-// Smooth scroll function
-const smoothScrollTo = (targetId: string) => {
-  if (targetId.startsWith('#')) {
-    const element = document.querySelector(targetId)
-    if (element) {
-      element.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
-      })
-    }
-  }
-}
 
 export function LandingNavbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -71,12 +57,12 @@ export function LandingNavbar() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex h-16 items-center justify-between">
         {/* Logo */}
         <div className="flex items-center space-x-2">
-          <div className="flex items-center space-x-2">
+          <Link href="/landing" className="flex items-center space-x-2 cursor-pointer">
             <Logo size={32} />
             <span className="font-bold">
-              Cyber Kernel
+              Brandly
             </span>
-          </div>
+          </Link>
         </div>
 
         {/* Desktop Navigation */}
@@ -94,18 +80,13 @@ export function LandingNavbar() {
                     </NavigationMenuContent>
                   </>
                 ) : (
-                  <NavigationMenuLink
-                    className="group inline-flex h-10 w-max items-center justify-center px-4 py-2 text-sm font-medium transition-colors hover:text-primary focus:text-primary focus:outline-none cursor-pointer"
-                    onClick={(e: React.MouseEvent) => {
-                      e.preventDefault()
-                      if (item.href.startsWith('#')) {
-                        smoothScrollTo(item.href)
-                      } else {
-                        window.location.href = item.href
-                      }
-                    }}
-                  >
-                    {item.name}
+                  <NavigationMenuLink asChild>
+                    <Link
+                      href={item.href}
+                      className="group inline-flex h-10 w-max items-center justify-center px-4 py-2 text-sm font-medium transition-colors hover:text-primary focus:text-primary focus:outline-none cursor-pointer"
+                    >
+                      {item.name}
+                    </Link>
                   </NavigationMenuLink>
                 )}
               </NavigationMenuItem>
@@ -117,13 +98,10 @@ export function LandingNavbar() {
         <div className="hidden xl:flex items-center space-x-2">
           <ModeToggle variant="ghost" />
           <Button variant="outline" asChild className="cursor-pointer">
-            <Link href="/dashboard" target="_blank" rel="noopener noreferrer">
+            <Link href="/dashboard">
               <LayoutDashboard className="h-4 w-4 mr-2" />
               Dashboard
             </Link>
-          </Button>
-          <Button variant="ghost" asChild className="cursor-pointer">
-            <Link href="/auth/sign-in">Sign In</Link>
           </Button>
           <Button asChild className="cursor-pointer">
             <Link href="/auth/sign-up">Get Started</Link>
@@ -146,7 +124,7 @@ export function LandingNavbar() {
                   <div className="p-2 bg-primary/10 rounded-lg">
                     <Logo size={16} />
                   </div>
-                  <SheetTitle className="text-lg font-semibold">Cyber Kernel</SheetTitle>
+                  <SheetTitle className="text-lg font-semibold">Brandly</SheetTitle>
                   <div className="ml-auto flex items-center gap-2">
                     <Button
                       variant="ghost"
@@ -185,38 +163,26 @@ export function LandingNavbar() {
                                   {solution.title}
                                 </div>
                               ) : (
-                                <a
+                                <Link
                                   key={solution.name}
                                   href={solution.href}
                                   className="flex items-center px-4 py-2 text-sm rounded-lg transition-colors hover:bg-accent hover:text-accent-foreground cursor-pointer"
-                                  onClick={(e) => {
-                                    setIsOpen(false)
-                                    if (solution.href?.startsWith('#')) {
-                                      e.preventDefault()
-                                      setTimeout(() => smoothScrollTo(solution.href), 100)
-                                    }
-                                  }}
+                                  onClick={() => setIsOpen(false)}
                                 >
                                   {solution.name}
-                                </a>
+                                </Link>
                               )
                             ))}
                           </CollapsibleContent>
                         </Collapsible>
                       ) : (
-                        <a
+                        <Link
                           href={item.href}
                           className="flex items-center px-4 py-3 text-base font-medium rounded-lg transition-colors hover:bg-accent hover:text-accent-foreground cursor-pointer"
-                          onClick={(e) => {
-                            setIsOpen(false)
-                            if (item.href.startsWith('#')) {
-                              e.preventDefault()
-                              setTimeout(() => smoothScrollTo(item.href), 100)
-                            }
-                          }}
+                          onClick={() => setIsOpen(false)}
                         >
                           {item.name}
-                        </a>
+                        </Link>
                       )}
                     </div>
                   ))}
@@ -225,8 +191,6 @@ export function LandingNavbar() {
 
               {/* Footer Actions */}
               <div className="border-t p-6 space-y-4">
-
-                {/* Primary Actions */}
                 <div className="space-y-3">
                   <Button variant="outline" size="lg" asChild className="w-full cursor-pointer">
                     <Link href="/dashboard">
@@ -234,7 +198,6 @@ export function LandingNavbar() {
                       Dashboard
                     </Link>
                   </Button>
-
                   <div className="grid grid-cols-2 gap-3">
                     <Button variant="outline" size="lg" asChild className="cursor-pointer">
                       <Link href="/auth/sign-in">Sign In</Link>

@@ -6,8 +6,8 @@ import { SidebarConfigProvider } from "@/contexts/sidebar-context";
 import { inter } from "@/lib/fonts";
 
 export const metadata: Metadata = {
-  title: "Shadcn Dashboard",
-  description: "A dashboard built with Next.js and shadcn/ui",
+  title: "Brandly | Customer Dashboard",
+  description: "Manage your professional business website with Brandly.",
 };
 
 export default function RootLayout({
@@ -16,9 +16,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} antialiased`}>
+    <html lang="en" className={`${inter.variable} antialiased`} suppressHydrationWarning>
       <body className={inter.className}>
-        <ThemeProvider defaultTheme="system" storageKey="nextjs-ui-theme">
+        <ThemeProvider defaultTheme="system" storageKey="brandly-ui-theme">
           <SidebarConfigProvider>
             {children}
           </SidebarConfigProvider>

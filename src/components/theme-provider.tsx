@@ -14,7 +14,7 @@ type ThemeProviderProps = {
 export function ThemeProvider({
   children,
   defaultTheme = "system",
-  storageKey = "vite-ui-theme",
+  storageKey = "brandly-ui-theme",
   ...props
 }: ThemeProviderProps) {
   const [theme, setTheme] = React.useState<Theme>(

@@ -1,104 +1,91 @@
 "use client"
 
 import {
-  Shield,
-  BarChart3,
-  Database,
-  Building2,
-  Rocket,
-  Settings,
+  Store,
+  Scissors,
+  Dumbbell,
+  User,
+  Coffee,
+  ShoppingBag,
   Zap,
-  Package,
-  Layout,
-  Crown,
-  Palette
+  Globe,
+  MessageCircle,
 } from 'lucide-react'
+import Link from 'next/link'
 
 const menuSections = [
   {
-    title: 'Browse Products',
+    title: 'Business Types',
     items: [
       {
-        title: 'Free Blocks',
-        description: 'Essential UI components and sections',
-        icon: Package,
-        href: '#free-blocks'
+        title: 'Restaurants',
+        description: 'Menu, location, and online orders',
+        icon: Coffee,
+        href: '/landing/features'
       },
       {
-        title: 'Premium Templates',
-        description: 'Complete page templates and layouts',
-        icon: Crown,
-        href: '#premium-templates'
+        title: 'Salons & Spas',
+        description: 'Service lists and appointment links',
+        icon: Scissors,
+        href: '/landing/features'
       },
       {
-        title: 'Admin Dashboards',
-        description: 'Full-featured dashboard solutions',
-        icon: BarChart3,
-        href: '#admin-dashboards'
+        title: 'Gyms & Fitness',
+        description: 'Trainer profiles and class schedules',
+        icon: Dumbbell,
+        href: '/landing/features'
       },
       {
-        title: 'Landing Pages',
-        description: 'Marketing and product landing templates',
-        icon: Layout,
-        href: '#landing-pages'
+        title: 'Personal Portfolios',
+        description: 'Showcase your skills and work',
+        icon: User,
+        href: '/landing/features'
       }
     ]
   },
   {
-    title: 'Categories',
+    title: 'Features',
     items: [
       {
-        title: 'E-commerce',
-        description: 'Online store admin panels and components',
-        icon: Building2,
-        href: '#ecommerce'
-      },
-      {
-        title: 'SaaS Dashboards',
-        description: 'Application admin interfaces',
-        icon: Rocket,
-        href: '#saas-dashboards'
-      },
-      {
-        title: 'Analytics',
-        description: 'Data visualization and reporting templates',
-        icon: BarChart3,
-        href: '#analytics'
-      },
-      {
-        title: 'Authentication',
-        description: 'Login, signup, and user management pages',
-        icon: Shield,
-        href: '#authentication'
-      }
-    ]
-  },
-  {
-    title: 'Resources',
-    items: [
-      {
-        title: 'Documentation',
-        description: 'Integration guides and setup instructions',
-        icon: Database,
-        href: '#docs'
-      },
-      {
-        title: 'Component Showcase',
-        description: 'Interactive preview of all components',
-        icon: Palette,
-        href: '#showcase'
-      },
-      {
-        title: 'GitHub Repository',
-        description: 'Open source foundation and community',
-        icon: Settings,
-        href: '#github'
-      },
-      {
-        title: 'Design System',
-        description: 'shadcn/ui standards and customization',
+        title: 'Instant Builder',
+        description: 'Fill a form, get a website',
         icon: Zap,
-        href: '#design-system'
+        href: '/landing/features'
+      },
+      {
+        title: 'Cloud Hosting',
+        description: 'Reliable and fast global delivery',
+        icon: Globe,
+        href: '/landing/features'
+      },
+      {
+        title: 'Lead Gen',
+        description: 'WhatsApp and Call integrations',
+        icon: MessageCircle,
+        href: '/landing/features'
+      },
+      {
+        title: 'Local SEO',
+        description: 'Rank higher in your neighborhood',
+        icon: Store,
+        href: '/landing/features'
+      }
+    ]
+  },
+  {
+    title: 'Why Brandly?',
+    items: [
+      {
+        title: 'Pricing',
+        description: 'Only ₹9 to get started today',
+        icon: ShoppingBag,
+        href: '/landing/pricing'
+      },
+      {
+        title: 'Templates',
+        description: 'Modern designs for 2026',
+        icon: Zap,
+        href: '/landing/features'
       }
     ]
   }
@@ -110,15 +97,13 @@ export function MegaMenu() {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-12">
         {menuSections.map((section) => (
           <div key={section.title} className="space-y-4 lg:space-y-6">
-            {/* Section Header */}
             <h3 className="text-sm font-medium text-muted-foreground uppercase tracking-wide">
               {section.title}
             </h3>
 
-            {/* Section Links */}
             <div className="space-y-3 lg:space-y-4">
               {section.items.map((item) => (
-                <a
+                <Link
                   key={item.title}
                   href={item.href}
                   className="group block space-y-1 lg:space-y-2 hover:bg-accent rounded-md p-2 lg:p-3 -mx-2 lg:-mx-3 transition-colors my-0"
@@ -132,7 +117,7 @@ export function MegaMenu() {
                   <p className="text-xs text-muted-foreground leading-relaxed ml-6 lg:ml-7">
                     {item.description}
                   </p>
-                </a>
+                </Link>
               ))}
             </div>
           </div>

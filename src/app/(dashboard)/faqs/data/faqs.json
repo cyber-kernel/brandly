@@ -1,8 +1,8 @@
 [
   {
     "id": 1,
-    "question": "What is Cyber Kernel Admin?",
-    "answer": "Cyber Kernel Admin is a comprehensive admin dashboard template built with React, TypeScript, and shadcn/ui components. It provides a complete solution for managing your software systems or business operations.",
+    "question": "What is Brandly Admin?",
+    "answer": "Brandly Admin is a comprehensive admin dashboard template built with React, TypeScript, and shadcn/ui components. It provides a complete solution for managing your software systems or business operations.",
     "category": "General"
   },
   {
@@ -276,3 +276,4 @@
     "category": "Support"
   }
 ]
+

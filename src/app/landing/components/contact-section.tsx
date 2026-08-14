@@ -64,7 +64,7 @@ export function ContactSection() {
             Need help or have questions?
           </h2>
           <p className="text-lg text-muted-foreground">
-            Our team is here to help you get the most out of Cyber Kernel. Choose the best way to reach out to us.
+            Our team is here to help you get the most out of Brandly. Choose the best way to reach out to us.
           </p>
         </div>
 
@@ -199,7 +199,7 @@ export function ContactSection() {
                           <FormLabel>Message</FormLabel>
                           <FormControl>
                             <Textarea
-                              placeholder="Tell us how we can help you with Cyber Kernel..."
+                              placeholder="Tell us how we can help you with Brandly..."
                               rows={10}
                               className="min-h-50"
                               {...field}
@@ -222,3 +222,4 @@ export function ContactSection() {
     </section>
   )
 }
+

@@ -1,5 +1,4 @@
 import { Heart } from "lucide-react"
-import Link from "next/link"
 
 export function SiteFooter() {
   return (
@@ -11,11 +10,11 @@ export function SiteFooter() {
             <Heart className="h-4 w-4 fill-red-500 text-red-500" />
             <span>by</span>
             <span className="font-medium text-foreground transition-colors">
-              Cyber Kernel Team
+              Brandly Team
             </span>
           </div>
           <p className="text-xs text-muted-foreground">
-            Building robust and modern software solutions for the future.
+            Empowering small businesses with professional digital presence.
           </p>
         </div>
       </div>

@@ -14,13 +14,13 @@ type FaqItem = {
 const faqItems: FaqItem[] = [
   {
     value: 'item-1',
-    question: 'How do I integrate Cyber Kernel solutions into my project?',
+    question: 'How do I integrate Brandly solutions into my project?',
     answer:
       'Integration is seamless! Our systems are built with modern web standards and work with React, Next.js, and Vite. We provide comprehensive APIs and clear implementation guides to ensure a smooth transition into your existing infrastructure.',
   },
   {
     value: 'item-2',
-    question: 'What kind of support does Cyber Kernel provide?',
+    question: 'What kind of support does Brandly provide?',
     answer:
       'We offer dedicated technical support for all our enterprise solutions. Our team of experts is available to assist with architecture planning, implementation, and ongoing maintenance to ensure your systems remain robust and secure.',
   },
@@ -61,7 +61,7 @@ const FaqSection = () => {
             Frequently Asked Questions
           </h2>
           <p className="text-lg text-muted-foreground">
-            Everything you need to know about Cyber Kernel solutions, integration, and security. Still have questions? We&apos;re here to help!
+            Everything you need to know about Brandly solutions, integration, and security. Still have questions? We&apos;re here to help!
           </p>
         </div>
 
@@ -105,3 +105,4 @@ const FaqSection = () => {
 }
 
 export { FaqSection }
+

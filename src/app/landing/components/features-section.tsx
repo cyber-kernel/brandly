@@ -72,7 +72,7 @@ export function FeaturesSection() {
             Everything you need to power your digital infrastructure
           </h2>
           <p className="text-lg text-muted-foreground">
-            Cyber Kernel provides cutting-edge digital engines and advanced dashboards to help you build enterprise-grade applications faster than ever.
+            Brandly provides cutting-edge digital engines and advanced dashboards to help you build enterprise-grade applications faster than ever.
           </p>
         </div>
 
@@ -173,3 +173,4 @@ export function FeaturesSection() {
     </section>
   )
 }
+

@@ -6,6 +6,7 @@ import { Separator } from "@/components/ui/separator"
 import { SidebarTrigger } from "@/components/ui/sidebar"
 import { CommandSearch, SearchTrigger } from "@/components/command-search"
 import { ModeToggle } from "@/components/mode-toggle"
+import { Globe, ArrowUpRight } from "lucide-react"
 
 export function SiteHeader() {
   const [searchOpen, setSearchOpen] = React.useState(false)
@@ -37,12 +38,14 @@ export function SiteHeader() {
           <div className="ml-auto flex items-center gap-2">
             <Button variant="ghost" asChild size="sm" className="hidden sm:flex">
               <a
-                href="/landing"
+                href="https://yourbusiness.brandly.site"
                 rel="noopener noreferrer"
                 target="_blank"
-                className="dark:text-foreground"
+                className="dark:text-foreground flex items-center"
               >
-                Landing Page
+                <Globe className="mr-1 h-3 w-3" />
+                View Website
+                <ArrowUpRight className="ml-1 h-3 w-3" />
               </a>
             </Button>
             <ModeToggle />

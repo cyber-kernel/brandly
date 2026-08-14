@@ -4,8 +4,8 @@ import {
   CreditCard,
   EllipsisVertical,
   LogOut,
-  BellDot,
-  CircleUser,
+  Settings,
+  HelpCircle,
 } from "lucide-react"
 import Link from "next/link"
 
@@ -81,27 +81,27 @@ export function NavUser({
             <DropdownMenuGroup>
               <DropdownMenuItem asChild className="cursor-pointer">
                 <Link href="/settings/account">
-                  <CircleUser />
-                  Account
+                  <Settings className="size-4" />
+                  Account Settings
                 </Link>
               </DropdownMenuItem>
               <DropdownMenuItem asChild className="cursor-pointer">
-                <Link href="/settings/billing">
-                  <CreditCard />
-                  Billing
+                <Link href="/billing">
+                  <CreditCard className="size-4" />
+                  Plans & Billing
                 </Link>
               </DropdownMenuItem>
               <DropdownMenuItem asChild className="cursor-pointer">
-                <Link href="/settings/notifications">
-                  <BellDot />
-                  Notifications
+                <Link href="/contact">
+                  <HelpCircle className="size-4" />
+                  Contact Support
                 </Link>
               </DropdownMenuItem>
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
             <DropdownMenuItem asChild className="cursor-pointer">
-              <Link href="/sign-in">
-                <LogOut />
+              <Link href="/auth/sign-in">
+                <LogOut className="size-4" />
                 Log out
               </Link>
             </DropdownMenuItem>

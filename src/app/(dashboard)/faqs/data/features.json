@@ -1,26 +1,26 @@
 [
   {
     "id": 1,
-    "title": "Premium Quality",
-    "description": "Handcrafted with premium materials and meticulous attention to detail.",
-    "icon": "Sparkles"
+    "title": "Easy Builder",
+    "description": "Create your website in minutes with our intuitive form-based builder.",
+    "icon": "Zap"
   },
   {
     "id": 2,
-    "title": "Secure Shopping",
-    "description": "100% secure payment processing with end-to-end encryption.",
-    "icon": "Shield"
+    "title": "Professional Themes",
+    "description": "Modern templates designed for specific business niches.",
+    "icon": "Palette"
   },
   {
     "id": 3,
-    "title": "Fast Delivery",
-    "description": "Free worldwide shipping and hassle-free returns within 30 days.",
-    "icon": "Truck"
+    "title": "Cloud Hosting",
+    "description": "Lightning fast loading speeds with our optimized static generation.",
+    "icon": "Globe"
   },
   {
     "id": 4,
-    "title": "24/7 Support",
-    "description": "Round-the-clock customer support to assist you anytime.",
-    "icon": "Clock"
+    "title": "Direct Growth",
+    "description": "WhatsApp and Call buttons to convert visitors into customers instantly.",
+    "icon": "TrendingUp"
   }
 ]

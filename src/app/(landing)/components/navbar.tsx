@@ -30,21 +30,21 @@ import { ModeToggle } from '@/components/mode-toggle'
 import { useTheme } from '@/hooks/use-theme'
 
 const navigationItems = [
-  { name: 'Home', href: '/landing' },
-  { name: 'Features', href: '/landing/features' },
-  { name: 'Solutions', href: '/landing/features', hasMegaMenu: true },
-  { name: 'Pricing', href: '/landing/pricing' },
-  { name: 'About', href: '/landing/about' },
-  { name: 'FAQ', href: '/landing/faq' },
-  { name: 'Contact', href: '/landing/contact' },
+  { name: 'Home', href: '/' },
+  { name: 'Features', href: '/features' },
+  { name: 'Solutions', href: '/features', hasMegaMenu: true },
+  { name: 'Pricing', href: '/pricing' },
+  { name: 'About', href: '/about' },
+  { name: 'FAQ', href: '/faq' },
+  { name: 'Contact', href: '/contact' },
 ]
 
 const solutionsItems = [
   { title: 'Our Solutions' },
-  { name: 'For Restaurants', href: '/landing/features' },
-  { name: 'For Salons', href: '/landing/features' },
-  { name: 'For Gyms', href: '/landing/features' },
-  { name: 'For Portfolios', href: '/landing/features' },
+  { name: 'For Restaurants', href: '/features' },
+  { name: 'For Salons', href: '/features' },
+  { name: 'For Gyms', href: '/features' },
+  { name: 'For Portfolios', href: '/features' },
 ]
 
 export function LandingNavbar() {
@@ -57,7 +57,7 @@ export function LandingNavbar() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex h-16 items-center justify-between">
         {/* Logo */}
         <div className="flex items-center space-x-2">
-          <Link href="/landing" className="flex items-center space-x-2 cursor-pointer">
+          <Link href="" className="flex items-center space-x-2 cursor-pointer">
             <Logo size={32} />
             <span className="font-bold">
               Brandly

@@ -1,552 +1,378 @@
-# Brandly Dashboard + Landing Page Template
+# Brandly
 
-[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
-[![GitHub Stars](https://img.shields.io/github/stars/silicondeck/shadcn-dashboard-landing-template?style=social)](https://github.com/silicondeck/shadcn-dashboard-landing-template)
-[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![React](https://img.shields.io/badge/React-20232A?logo=react&logoColor=61DAFB)](https://reactjs.org/)
-[![Vite](https://img.shields.io/badge/Vite-646CFF?logo=vite&logoColor=white)](https://vitejs.dev/)
-[![Next.js](https://img.shields.io/badge/Next.js-000000?logo=next.js&logoColor=white)](https://nextjs.org/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+Brandly is a SaaS platform for small businesses to create fast, professional websites using curated templates. The product is intentionally focused on a simple static website workflow rather than a general-purpose website builder.
 
-![Dashboard Preview](vite-version/public/dashboard.png)
+This repository currently contains the core Next.js frontend foundation for the public Brandly marketing website and dashboard experience. The backend, database, template generator, deployment system, and customer website build pipeline are planned for the next implementation stages.
 
+## Product overview
 
-<div align="center">
+Brandly is designed around three clear surfaces:
 
-🎯 <a href="https://shadcnstore.com/templates/dashboard/shadcn-dashboard-landing-template/dashboard" target="_blank">**View Live Demo**</a> | 🧩 <a href="https://shadcnstore.com/blocks" target="_blank">**Explore Premium Blocks**</a>
+1. Public marketing website
+   - landing pages
+   - pricing and plans
+   - templates and features
+   - blog and content marketing
+   - authentication pages
 
-</div>
+2. Customer dashboard
+   - website management
+   - template selection
+   - content editing
+   - domain and billing setup
+   - analytics and leads
 
-Introducing a sleek, modern, and open-source admin dashboard template built with the latest web technologies, including React + TypeScript + Vite and Next.js + TypeScript. Powered by shadcn/ui v3 and Tailwind CSS v4, this project offers a clean, responsive, and highly customizable UI. Developed and maintained by [Brandly](https://shadcnstore.com), this free and open-source template is designed to accelerate your development process. Whether you're building an admin panel, SaaS dashboard, or launching an AI-driven product, this dashboard provides a beautiful, production-ready interface for your application — complete with a seamless dashboard and a fully-featured landing page to help you hit the ground running.
+3. Customer-generated websites
+   - static, template-based business websites
+   - fast loading and SEO-friendly
+   - served through a CDN/object-storage model
 
-🚀 **Free & Open Source** by [**Brandly**](https://shadcnstore.com) - Your gateway to premium UI components and templates.
+These are intentionally separate concerns and should stay distinct in code, routing, and architecture.
 
+## Brandly mission
 
----
+Brandly helps local and small businesses launch a credible online presence quickly and affordably without needing a developer. The aim is to provide a professional website that is simple to customize, easy to manage, and cheap to host.
 
-## 🌟 Live Demo
+## Non-goals for the MVP
 
-Experience the template in action:
+The platform is not intended to support:
 
-- **[🖥️ Dashboard Demo](https://shadcnstore.com/templates/dashboard/shadcn-dashboard-landing-template/dashboard)** - Complete admin dashboard with apps
-- **[🌐 Landing Page Demo](https://shadcnstore.com/templates/dashboard/shadcn-dashboard-landing-template/landing)** - Beautiful marketing landing page
+- arbitrary HTML/CSS editing
+- drag-and-drop page builders
+- full blog CMS for customer websites
+- e-commerce
+- memberships
+- booking systems
+- user-generated content systems
 
-> **Note**: This template includes both a complete dashboard (with mail, tasks, chat, calendar apps) and a marketing landing page in both Vite and Next.js versions.
-
----
-
-## ✨ What's Included
-
-🎯 **Two Complete Templates:**
-
-- **🖥️ Admin Dashboard** - Modern, feature-rich dashboard with 30+ pages
-- **🌐 Landing Page** - Business-ready landing page template
-
-⚡ **Dual Framework Support:**
-
-- **Vite** - Lightning-fast development experience
-- **Next.js 15** - Production-ready with App Router
-
-🎨 **Live Theme Customization:**
-
-- **tweakcn integration** - Real-time theme editing
-- **Built-in customizer** - Preview all possible combinations live
-- **Multiple layouts** - Sidebar variants & collapsible options
-
----
-
-## 🚀 Key Features
-
-### 📊 **Dashboard Features**
-
-- **2 Dashboard Variants** - Overview & Analytics dashboards
-- **App Demos** - Mail, Tasks, Chat, Calendar, Users applications
-- **30+ Pages** - Authentication, Settings, Errors, FAQ, Pricing
-- **Data Tables** - Advanced tables with sorting, filtering, and pagination
-- **Charts & Analytics** - Recharts integration with beautiful visualizations
-
-### 🎨 **Design & Theming**
-
-- **Live Theme Customizer** - Real-time color and layout switching
-- **tweakcn Integration** - Professional theme management
-- **Multiple Layouts** - Sidebar variants, collapsible navigation
-- **Responsive Design** - Mobile-first approach with container queries
-- **Dark/Light Mode** - Seamless theme switching
-
-### ⚡ **Developer Experience**
-
-- **Modern Tech Stack** - React 19, TypeScript, Tailwind CSS v4
-- **Cross-Platform** - Works with both Vite and Next.js
-- **Type Safety** - Full TypeScript support throughout
-- **Component Library** - Latest shadcn/ui v3 with Radix UI
-- **Easy Customization** - Well-structured, modular codebase
-
----
-
-## 🏗️ Project Structure
-
-```text
-📁 shadcn-dashboard/
-├── 📁 vite-version/              # Vite + React version
-│   ├── 📁 src/
-│   │   ├── 📁 app/               # Demo pages & applications
-│   │   │   ├── 📁 dashboard/     # Dashboard variants
-│   │   │   ├── 📁 dashboard-2/   # Alternative dashboard layout
-│   │   │   ├── 📁 landing/       # Landing page template
-│   │   │   ├── 📁 auth/          # Authentication pages
-│   │   │   ├── 📁 mail/          # Email application demo
-│   │   │   ├── 📁 tasks/         # Task management demo
-│   │   │   ├── 📁 chat/          # Chat application demo
-│   │   │   ├── 📁 calendar/      # Calendar demo
-│   │   │   ├── 📁 settings/      # User settings pages
-│   │   │   ├── 📁 errors/        # Error pages (404, 500, etc.)
-│   │   │   ├── 📁 users/         # User management pages
-│   │   │   ├── 📁 faqs/          # FAQ pages
-│   │   │   └── 📁 pricing/       # Pricing pages
-│   │   ├── 📁 components/        # UI components
-│   │   │   ├── 📁 ui/            # shadcn/ui v3 components
-│   │   │   ├── 📁 layouts/       # Layout components
-│   │   │   └── 📁 theme-customizer/ # Live theme editor
-│   │   ├── 📁 hooks/             # Custom React hooks
-│   │   ├── 📁 lib/               # Utilities & configurations
-│   │   └── 📁 types/             # TypeScript type definitions
-│   └── 📄 package.json           # Vite dependencies
-│
-├── 📁 nextjs-version/            # Next.js 15 version
-│   ├── 📁 src/
-│   │   ├── 📁 app/               # App Router with route groups
-│   │   │   ├── 📁 (auth)/        # Authentication route group
-│   │   │   │   ├── 📁 login/     # Login pages
-│   │   │   │   ├── 📁 signup/    # Registration pages
-│   │   │   │   ├── 📁 forgot-password/ # Password recovery
-│   │   │   │   └── 📁 errors/    # Error pages (404, 500, etc.)
-│   │   │   ├── 📁 (dashboard)/   # Dashboard route group
-│   │   │   │   ├── 📁 dashboard/ # Main dashboard
-│   │   │   │   ├── 📁 dashboard-2/ # Alternative dashboard
-│   │   │   │   ├── 📁 mail/      # Email application
-│   │   │   │   ├── 📁 tasks/     # Task management
-│   │   │   │   ├── 📁 chat/      # Chat application
-│   │   │   │   ├── 📁 calendar/  # Calendar demo
-│   │   │   │   ├── 📁 settings/  # User settings
-│   │   │   │   ├── 📁 users/     # User management
-│   │   │   │   ├── 📁 faqs/      # FAQ pages
-│   │   │   │   ├── 📁 pricing/   # Pricing pages
-│   │   │   │   └── 📄 layout.tsx # Dashboard layout
-│   │   │   ├── 📁 landing/       # Landing page template
-│   │   │   ├── 📄 layout.tsx     # Root layout
-│   │   │   ├── 📄 loading.tsx    # Global loading component
-│   │   │   ├── 📄 not-found.tsx  # 404 page
-│   │   │   └── 📄 page.tsx       # Homepage
-│   │   ├── 📁 components/        # Same component structure as Vite
-│   │   ├── 📁 hooks/             # Custom React hooks
-│   │   ├── 📁 lib/               # Utilities & configurations
-│   │   └── 📁 types/             # TypeScript type definitions
-│   └── 📄 package.json           # Next.js dependencies
-│
-├── 📄 README.md                  # This file
-└── 📄 LICENSE                    # MIT License
-```
-
----
-
-## � Quick Start
-
-### Prerequisites
-
-- **Node.js** 18+
-- **pnpm** (recommended) or npm
-
-### 1. Clone the Repository
-
-```bash
-git clone https://github.com/silicondeck/shadcn-dashboard-landing-template
-cd shadcn-dashboard
-```
-
-### 2. Choose Your Framework
-
-#### 🔥 **Vite Version** (Recommended for Development)
-
-```bash
-cd vite-version
-pnpm install
-pnpm dev
-```
-
-**Access at:** `http://localhost:5173`
-
-#### ⚡ **Next.js Version** (Production-Ready)
-
-```bash
-cd nextjs-version
-pnpm install
-pnpm dev
-```
-
-**Access at:** `http://localhost:3000`
-
-### 3. Start Building
-
-- **Dashboard:** Navigate to [/dashboard](https://shadcnstore.com/templates/dashboard/shadcn-dashboard-landing-template/dashboard) or [/dashboard-2](https://shadcnstore.com/templates/dashboard/shadcn-dashboard-landing-template/dashboard-2)
-- **Landing Page:** Visit [/landing](https://shadcnstore.com/templates/dashboard/shadcn-dashboard-landing-template/landing) for the business template
-- **Theme Customizer:** Use the built-in customizer to preview themes live
-- **Apps:** Explore [Mail](https://shadcnstore.com/templates/dashboard/shadcn-dashboard-landing-template/mail), [Tasks](https://shadcnstore.com/templates/dashboard/shadcn-dashboard-landing-template/tasks), [Chat](https://shadcnstore.com/templates/dashboard/shadcn-dashboard-landing-template/chat), [Calendar](https://shadcnstore.com/templates/dashboard/shadcn-dashboard-landing-template/calendar), [Users](https://shadcnstore.com/templates/dashboard/shadcn-dashboard-landing-template/users)
-- **Authentication:** Check out [Signin](https://shadcnstore.com/templates/dashboard/shadcn-dashboard-landing-template/auth/sign-in), [Signup](https://shadcnstore.com/templates/dashboard/shadcn-dashboard-landing-template/auth/sign-up), [Forgot Password](https://shadcnstore.com/templates/dashboard/shadcn-dashboard-landing-template/auth/forgot-password)
-- **Settings:** Visit [Account](https://shadcnstore.com/templates/dashboard/shadcn-dashboard-landing-template/settings/account), [Appearance](https://shadcnstore.com/templates/dashboard/shadcn-dashboard-landing-template/settings/appearance), [Billing](https://shadcnstore.com/templates/dashboard/shadcn-dashboard-landing-template/settings/billing)
-
----
-
-## 🛠️ Development Commands
-
-### Vite Version
-
-```bash
-pnpm dev          # Start development server
-pnpm build        # Build for production
-pnpm preview      # Preview production build
-pnpm lint         # Run ESLint
-```
-
-### Next.js Version
-
-```bash
-pnpm dev          # Start development server
-pnpm build        # Build for production
-pnpm start        # Start production server
-pnpm lint         # Run Next.js linter
-```
-
----
-
-## 🎨 Theme Customization
-
-### **Live Theme Customizer**
-
-This template includes a powerful **live theme customizer** powered by **tweakcn**:
-
-![Customizer Preview](vite-version/public/customizer.png)
-
-1. **Open the customizer** - Click the theme customizer button
-2. **Choose colors** - Pick from preset themes or create custom palettes
-3. **Layout options** - Switch between sidebar variants and layouts
-4. **Real-time preview** - See changes instantly across all components
-5. **Export themes** - Save your custom themes for production use
-
-### **Built-in Themes**
-
-- 🌊 **Default** - Clean blue theme
-- 🌙 **Dark** - Professional dark theme
-- 🌸 **Rose** - Warm pink accents
-- 🌿 **Green** - Fresh green palette
-- 🌅 **Orange** - Vibrant orange theme
-- 🔴 **Red** - Bold red accents
-- 💜 **Violet** - Modern purple theme
-
-### **Custom Theme Creation**
-
-#### **Adding Custom Themes to the Customizer**
-To add your own custom themes to the live customizer, create theme objects in your theme configuration:
-
-```typescript
-// src/config/theme-data.ts (or similar file)
-export const customTheme = {
-  name: "Custom Brand",
-  cssVars: {
-    light: {
-      primary: "210 100% 50%",
-      "primary-foreground": "0 0% 98%",
-      secondary: "210 100% 95%",
-      "secondary-foreground": "210 100% 20%",
-      accent: "210 100% 90%",
-      "accent-foreground": "210 100% 15%",
-      // Add more color variables as needed
-    },
-    dark: {
-      primary: "210 100% 60%",
-      "primary-foreground": "210 100% 15%",
-      // Dark mode variants
-    }
-  }
-}
-```
-
-#### **Manual CSS Variable Customization**
-To directly modify theme colors, update your CSS variables in `globals.css` or `index.css`:
-
-```css
-:root {
-  --primary: oklch(0.5 0.2 240);
-  --primary-foreground: oklch(0.98 0.02 240);
-  --secondary: oklch(0.96 0.01 240);
-  --secondary-foreground: oklch(0.2 0.02 240);
-  /* Customize other variables */
-}
-
-.dark {
-  --primary: oklch(0.7 0.2 240);
-  --primary-foreground: oklch(0.15 0.02 240);
-  /* Dark mode variants */
-}
-```
-
-### **Removing the Theme Customizer**
-
-If you want to remove the theme customizer from your project:
-
-#### **Vite Version:**
-1. Remove the theme customizer component: `src/components/theme-customizer.tsx`
-2. Remove the theme customizer button from your layout
-3. Remove theme-related imports from your main layout file
-4. Delete the `src/components/theme-customizer/` folder if it exists
-
-#### **Next.js Version:**
-1. Remove the theme customizer component: `src/components/theme-customizer.tsx`
-2. Remove the theme customizer button from `src/app/layout.tsx`
-3. Remove theme-related imports from your layout files
-4. Delete the `src/components/theme-customizer/` folder if it exists
-
-> 📖 **Learn More:** For comprehensive theming documentation, visit the [official shadcn/ui theming guide](https://ui.shadcn.com/docs/theming) which covers CSS variables, color formats, and advanced customization techniques.
-
----
-
-## 📦 Tech Stack
-
-### **Core Framework**
-
-- **React 19** - Latest React with concurrent features
-- **TypeScript** - Full type safety
-- **Vite** - Ultra-fast development
-- **Next.js 15** - Production-ready with App Router
-
-### **UI & Styling**
-
-- **shadcn/ui v3** - Latest component library
-- **Radix UI** - Accessible primitives
-- **Tailwind CSS v4** - Utility-first styling
-- **tweakcn** - Advanced theme management
-- **Lucide React** - Beautiful icons
-
-### **State & Data**
-
-- **Zustand** - Lightweight state management
-- **React Hook Form** - Forms with validation
-- **Zod** - Schema validation
-- **TanStack Table** - Advanced data tables
-
-### **Development**
-
-- **ESLint** - Code linting
-- **Prettier** - Code formatting
-- **TypeScript** - Static type checking
-
----
-
-## 📋 What's Included
-
-### **🖥️ Dashboard Pages**
-
-- **Dashboard** - Overview with analytics cards and charts
-- **Dashboard v2** - Alternative dashboard with different metrics
-
-### **📱 Application Demos**
-
-![Apps Preview](vite-version/public/apps.png)
-
-- **📧 Mail** - Complete email interface (Inbox, Read, Compose)
-- **✅ Tasks** - Task management with drag & drop
-- **💬 Chat** - Real-time chat interface
-- **📅 Calendar** - Event scheduling and management
-- **👥 Users** - User management and profiles with advanced tables
-
-### **🔐 Authentication**
-
-- **Login** - 3 login page variants with different layouts
-- **Sign Up** - 3 registration page variants with different designs  
-- **Forgot Password** - 3 password recovery page variants
-
-### **⚙️ Settings & Profile**
-
-- **User Settings** - Manage your personal information and preferences
-- **Account Settings** - Profile management
-- **Plans & Billing** - Subscription and payment pages
-- **Appearance** - Theme and display preferences
-- **Notifications** - Notification preferences
-- **Connections** - Social media integrations
-
-### **❌ Error Pages**
-
-- **404** - Page not found
-- **401** - Unauthorized access
-- **403** - Forbidden
-- **500** - Internal server error
-- **Under Maintenance** - Maintenance mode page
-
-### **🌐 Landing Page Template**
-
-- **Hero Section** - Compelling headlines and CTAs
-- **About Section** - Company/product introduction with interactive elements
-- **Features Section** - Product/service highlights with icons
-- **Stats Section** - Key metrics and achievements display
-- **Logo Carousel** - Partner/client logos showcase
-- **Team Section** - Team member profiles and information
-- **Testimonials Section** - Customer reviews and social proof
-- **Blog Section** - Latest blog posts and articles
-- **Pricing Section** - Pricing tables and plans
-- **FAQ Section** - Frequently asked questions with expandable answers
-- **Contact Section** - Contact forms and information
-- **CTA Section** - Call-to-action components
-- **Navigation & Footer** - Complete navigation and footer components
-- **Theme Customizer** - Live theme switching for landing page
-
-### **📄 Additional Pages**
-
-- **FAQ** - Frequently asked questions
-- **Pricing** - Detailed pricing pages
+These can become future services or leads for a separate web development business, but they are not core Brandly features.
 
----
-
-## 🌟 Why Choose This Template?
+## Core architecture
 
-### **🆓 Completely Free & Open Source**
+### Public website
 
-- **MIT Licensed** - Use for personal and commercial projects
-- **No restrictions** - Modify, distribute, and sell
-- **Community driven** - Contributions welcome
+The public marketing website should remain the acquisition and education surface for Brandly itself.
 
-### **🏢 Business Ready**
+Relevant areas include:
 
-- **Production code** - Clean, maintainable, and scalable
-- **Professional design** - Modern UI that looks great
-- **Complete templates** - Dashboard + Landing page included
+- home
+- features
+- templates
+- pricing
+- services
+- about
+- contact
+- blog
+- blog article pages
+- login/signup
 
-### **🎨 Advanced Theming**
+### Customer dashboard
 
-- **Live customization** - See changes in real-time
-- **tweakcn integration** - Professional theme management
-- **Multiple layouts** - Sidebar variants and options
+After authentication, customers access the dashboard. The dashboard is where they:
 
-### **⚡ Developer Friendly**
+- manage website status
+- preview or publish their site
+- edit supported content
+- choose templates
+- connect domain
+- review leads and analytics
+- manage billing and plan access
 
-- **Modern stack** - Latest React, TypeScript, Tailwind CSS
-- **Great DX** - Fast development with Vite
-- **Type safe** - Full TypeScript coverage
-- **Well documented** - Clear code and comments
+### Generated customer websites
 
----
+The final customer-facing site is a static website built from:
 
-## 🚀 Take It Further with Brandly
+- template code
+- template metadata/schema
+- customer content/data
+- theme and configuration
 
-This free template is just the beginning! **Brandly** offers a complete ecosystem of free & premium UI components, dashboards and templates to accelerate your development:
+This output should be served from a CDN/object-storage setup rather than a live database-backed application.
 
-### **🎁 Available Now**
+## Preferred technical stack
 
-- **[Premium Blocks](https://shadcnstore.com/blocks)** - 150+ production-ready UI blocks
-  - **Application Blocks** - Advanced dashboard components
-  - **Marketing Blocks** - Landing page sections
-  - **E-commerce Blocks** - Online store components
-  - **Free Blocks** - No-cost starter components
+### Frontend
 
-### **🔜 Coming Soon**
+- Next.js
+- TypeScript
+- React
+- Tailwind CSS
+- shadcn/ui
+- Lucide icons
 
-- **Premium Templates** - Complete application templates
-- **Landing Page Collection** - Business-ready landing pages
-- **Premium Dashboards** - Advanced dashboard solutions
+### Backend
 
-### **💡 Perfect For**
+- FastAPI
+- Python
+- SQLAlchemy
 
-- **SaaS Applications** - Complete dashboard solutions
-- **Marketing Sites** - Beautiful landing pages
-- **E-commerce** - Online store interfaces
-- **Internal Tools** - Admin panels and dashboards
+### Database
 
-> **🎯 [Explore Brandly](https://shadcnstore.com)** - Premium blocks, dashboards and templates for modern web applications.
+- PostgreSQL
 
----
+### Storage and deployment
 
-## 🤝 Contributing
+- object storage such as S3-compatible storage or Cloudflare R2
+- CDN/static hosting
 
-We welcome contributions! Here's how you can help:
+## High-level design principles
 
-### **Ways to Contribute**
+1. Keep platform, template, and customer data separate.
+2. Prefer static generated websites over runtime database-driven rendering.
+3. Use a shared PostgreSQL database with proper tenant-aware authorization.
+4. Use a modular monolith rather than a distributed system for the MVP.
+5. Enforce feature access through backend entitlements, not frontend checks.
+6. Avoid hardcoded pricing, plan access, or business rules.
+7. Preserve the public Brandly website and customer dashboard as separate experience layers.
 
-- 🐛 **Report bugs** - Found an issue? Let us know!
-- 💡 **Suggest features** - Have ideas for improvements?
-- 🔧 **Submit PRs** - Fix bugs or add new features
-- 📖 **Improve docs** - Help make documentation better
-- ⭐ **Star the repo** - Show your support!
+## Template and website generation model
 
-### **Getting Started**
+Template code and customer data should be combined at build time to generate a static website. The final site should not depend on live PostgreSQL lookups for normal page rendering.
 
-1. Fork the repository
-2. Create a feature branch: `git checkout -b my-feature`
-3. Make your changes and test thoroughly
-4. Commit: `git commit -m "Add new feature"`
-5. Push: `git push origin my-feature`
-6. Open a Pull Request
+Conceptually:
 
-### **Code Style**
+Template + Customer Data -> Build -> Static Site -> CDN
 
-- Use **TypeScript** for all new code
-- Follow **ESLint** and **Prettier** configurations
-- Add **type definitions** for props and data
-- Write **clear commit messages**
-- Test your changes in both **Vite** and **Next.js** versions
+The template system should support:
 
----
+- multiple template variants
+- template metadata
+- supported pages
+- supported sections
+- schema-driven editing
+- versioning
 
-## 📄 License
+## Important build-time experiment
 
-This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
+Before implementing the full deployment system, validate how Next.js handles imported JSON in a production build.
 
-**You are free to:**
+A minimal experiment should confirm:
 
-- ✅ Use commercially
-- ✅ Modify and distribute
-- ✅ Include in private projects
-- ✅ Sell products built with this template
+- imported JSON is embedded during build
+- changing the JSON without rebuilding does not update the production output
+- rebuilding does update the static output
 
-**Attribution to [Brandly](https://shadcnstore.com) is appreciated but not required.**
+This verifies the intended build-time data model and helps avoid incorrect assumptions.
 
----
+## Database and multi-tenancy
 
-## 🙏 Credits & Acknowledgments
+Brandly should use a shared PostgreSQL database, not a per-customer database.
 
-This template is built on the shoulders of amazing open-source projects:
+Expected entities include:
 
-- **[shadcn/ui](https://ui.shadcn.com)** - Beautiful and accessible components
-- **[Radix UI](https://www.radix-ui.com)** - Low-level accessible primitives
-- **[Tailwind CSS](https://tailwindcss.com)** - Utility-first CSS framework
-- **[Lucide Icons](https://lucide.dev)** - Beautiful & consistent icons
-- **[tweakcn](https://tweakcn.com)** - Advanced theme customization
-- **[Recharts](https://recharts.org)** - Composable charting library
-- **[TanStack Table](https://tanstack.com/table)** - Powerful data tables
+- users
+- websites
+- templates
+- template_versions
+- website_content
+- media
+- domains
+- subscriptions
+- payments
+- forms
+- leads
+- reviews
+- deployments
+- notifications
+- blog_posts
+- blog_categories
+
+Customer ownership and authorization must always be enforced on the backend.
 
----
+## Authentication and authorization
 
-## 📞 Support & Community
+Brandly should use secure and established auth patterns.
 
-### **Get Help**
+Required capabilities include:
 
-- 📖 **Documentation** - This README covers everything
-- 🐛 **Issues** - [Report bugs](https://github.com/silicondeck/shadcn-dashboard-landing-template/issues)
-- 💬 **Discussions** - [Join conversations](https://github.com/silicondeck/shadcn-dashboard-landing-template/discussions)
+- signup
+- login
+- logout
+- session handling
+- secure password handling
+- password reset if implemented
+- email verification if implemented
+- authorization
+- roles
 
-### **Stay Connected**
+The frontend must never be the source of truth for what a customer is allowed to do.
 
-- 🌐 **Website** - [Brandly.com](https://shadcnstore.com)
-- 🐦 **Twitter** - [@shadcnstore](https://twitter.com/shadcnstore)
-- 💬 **Discord** - [Join our server](https://discord.com/invite/XEQhPc9a6p)
-- 📧 **Email** - [hello@shadcnstore.com](mailto:hello@shadcnstore.com)
+## Billing and entitlements
 
----
+Brandly initially fits a simple two-plan model:
 
-<div align="center">
+- Starter: ₹9/month
+- Business: ₹49/month (first month at ₹9)
 
-**⭐ Star this repo if it helped you!**
+Pricing and access rules should be configuration-driven, not hardcoded in code. Billing status and premium feature access must be enforced server-side.
 
-[![Brandly](https://img.shields.io/badge/Built%20by-Brandly-blue?style=for-the-badge)](https://shadcnstore.com)
+Entitlements may include:
 
-_A free & open-source template by **[Brandly](https://shadcnstore.com)** - Premium UI components, dashboards and templates for modern web development._
+- custom domains
+- ad removal
+- SEO features
+- analytics
+- lead tools
+- premium sections
+- extra website functionality
 
-</div>
+## Website editor expectations
 
+The website editor is the central customer feature. It should allow controlled customization without exposing raw code editing.
+
+Customers should modify:
+
+- business name
+- logo
+- hero text
+- contact information
+- services
+- testimonials
+- images
+- navigation order
+- theme colors and typography
+- supported sections
+
+The editor should be schema-driven and not require custom hardcoded logic for every template.
+
+## Dashboard information architecture
+
+The customer dashboard should follow a clear structure:
+
+- Overview
+  - Dashboard
+  - Analytics
+  - Activity
+- Website
+  - Edit Website
+  - Templates
+  - Pages
+  - Media Library
+  - Forms
+- Business
+  - Business Profile
+  - Domain
+  - SEO
+  - Leads
+  - Reviews
+- Marketing
+  - Promotions
+  - Social Sharing
+  - QR Code
+- Growth
+  - Insights
+  - Conversion Tracking
+  - Search Performance
+- Finance
+  - Plans & Billing
+  - Payment History
+  - Invoices
+- Account
+  - Team Members
+  - Notifications
+  - Security
+  - Settings
+- Support
+  - Help Center
+  - Support Tickets
+
+Some areas can be premium/locked initially.
+
+## Public blog architecture
+
+The Brandly blog is not the same thing as customer websites.
+
+The blog supports:
+
+- SEO
+- content marketing
+- organic acquisition
+- lead generation
+- educational content
+
+It may eventually support:
+
+- categories
+- tags
+- author metadata
+- featured images
+- sitemap support
+- metadata and canonical tags
+
+## MVP priority
+
+### Phase 1
+
+- public marketing website
+- public blog
+- auth
+- dashboard shell
+- database foundation
+- customer/business profile
+- template system
+- website data model
+
+### Phase 2
+
+- template selection
+- website editor
+- pages
+- media
+- preview
+- publish
+- static generation
+- Brandly subdomain
+
+### Phase 3
+
+- custom domains
+- forms
+- leads
+- analytics
+- SEO
+- billing
+
+### Phase 4
+
+- reviews
+- promotions
+- social sharing
+- QR code
+- insights
+- conversion tracking
+- search performance
+- team members
+
+### Phase 5
+
+- AI features
+- advanced marketing services
+- advanced analytics
+- custom development lead generation
+
+## Project conventions
+
+- Reuse existing components before creating new ones.
+- Follow the current route structure and app conventions in this repo.
+- Do not duplicate existing public pages or dashboard sections.
+- Favor a simple and maintainable architecture over complex infrastructure.
+- Keep the feature set scoped to Brandly’s niche.
+
+## Implementation expectations
+
+When implementing new work:
+
+- inspect the existing project first
+- avoid unnecessary rewrites
+- keep changes focused
+- preserve public-vs-dashboard-vs-generated-site separation
+- validate behavior with the smallest relevant checks
+- document important architecture decisions
+
+## Final principle
+
+Brandly should remain a simple, clean, modular product:
+
+Public marketing website + customer dashboard + template-based static website generator
+
+The platform manages the customer. The template defines the design. The customer data defines the content. The build system produces a fast static website.
